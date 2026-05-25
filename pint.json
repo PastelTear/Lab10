@@ -1,0 +1,15 @@
+{
+    "preset": "laravel",
+    "exclude": [
+        "vendor",
+        "config",
+        "bootstrap/cache",
+        "storage",
+        "public",
+        "index.php",
+        "bootstrap/providers.php"
+    ],
+    "rules": {
+        "declare_strict_types": true
+    }
+}
