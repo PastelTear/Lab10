@@ -30,10 +30,3 @@ class TimeSlotsTest extends TestCase
         $this->assertFalse(TimeSlots::isValid('10:00:00'));
     }
 }
-
-
-
-
-
-
-
