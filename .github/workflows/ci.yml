@@ -13,12 +13,8 @@ on:
   pull_request:
     branches:
       - main
-      - master
       - develop
-      - development
-      - dev
       - uat
-      - qa
 
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
@@ -118,7 +114,12 @@ jobs:
           )
         )
       )
-    environment: ${{ (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && 'production' || 'staging' }}
+    environment: >-
+      ${{
+        (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && 'production'
+        || (github.ref == 'refs/heads/uat' || github.ref == 'refs/heads/qa') && 'uat'
+        || 'development'
+      }}
     steps:
       - uses: actions/checkout@v4
 
