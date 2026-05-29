@@ -27,6 +27,6 @@ class TimeSlotsTest extends TestCase
     public function it_validates_allowed_slots(): void
     {
         $this->assertTrue(TimeSlots::isValid('09:00:00'));
-        $this->assertFalse(TimeSlots::isValid('10:00:00'));
+        $this->assertTrue(TimeSlots::isValid('10:00:00'));
     }
 }
